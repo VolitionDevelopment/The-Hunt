@@ -30,6 +30,11 @@ public class Hobo extends Shopkeeper implements EventInteract {
     }
 
     @Override
+    public void onBattle(){
+        say("Oh you want to dance, sonny? Let's go, kid!", true);
+    }
+
+    @Override
     public void onDefeat(){
         System.out.println("You killed the shopkeeper! Murderer!");
         System.out.println("On the bright side, you found " + getMoneyRewarded() + " coins and " + getExpRewarded() + " EXP. Enjoy the bloodmoney...");

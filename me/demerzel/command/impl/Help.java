@@ -4,7 +4,9 @@ import me.demerzel.command.Command;
 import me.demerzel.command.CommandManager;
 import me.demerzel.entity.EntityPlayer;
 import me.demerzel.util.GameManager;
+import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -17,10 +19,16 @@ public class Help extends Command {
 
     @Override
     public boolean execute(String[] args, EntityPlayer player) {
-        CommandManager manager = GameManager.getInstance().getFactory();
+        CommandManager manager = new CommandManager();
+        ArrayList<String> used = new ArrayList<>();
+        for(Command command : manager.getCommands()){
 
-        for(HashMap.Entry<String, Command> hash : manager.getCommandHashMap().entrySet()){
-            System.out.println(manager.getAliases(hash.getValue().getClass()));
+            if(used.contains(command.getName())){
+                continue;
+            }
+
+            used.add(command.getName());
+            System.out.println(StringUtils.capitalize(command.getName()) + " | " + command.getDescription());
         }
 
         return false;

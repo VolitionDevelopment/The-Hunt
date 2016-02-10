@@ -74,6 +74,9 @@ public abstract class EntityMob extends Entity {
     public void attack(EntityPlayer player){
         System.out.println(getAttackText());
         double d = Math.random();
+
+
+
         if(d >= 0.1){
             int damage = Math.min(player.getHealth(), getStrength() - player.getArmor());
 

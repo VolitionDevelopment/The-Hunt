@@ -46,14 +46,16 @@ public class BattleManager {
         manager = GameManager.getInstance().getFactory();
         myTurn = enemy.getSpeed() <= player.getSpeed();
 
+        if(enemy instanceof EventBattle){
+            ((EventBattle) enemy).onBattle();
+        }
+
         System.out.println("============================");
         System.out.println("        BEGIN BATTLE!       ");
         System.out.println("============================");
         GameManager.getInstance().showEntities();
 
-        if(enemy instanceof EventBattle){
-            ((EventBattle) enemy).onBattle();
-        }
+
 
         while(!isEnded()){
             nextTurn();

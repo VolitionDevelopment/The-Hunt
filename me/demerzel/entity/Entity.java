@@ -127,7 +127,6 @@ public abstract class Entity {
     public void say(String out, boolean wait){
         if(wait){
             Utilities.cmd("<" + getName() + ">: " + out);
-            System.out.println("Press <Enter> to continue...");
         }else{
             System.out.println("<" + getName() + ">: " + out);
         }

@@ -1,9 +1,6 @@
 package me.demerzel.entity.impl.shopkeepers;
 
-import me.demerzel.entity.EntityMob;
-import me.demerzel.entity.EntityPlayer;
-import me.demerzel.entity.EntityBehavior;
-import me.demerzel.entity.EventInteract;
+import me.demerzel.entity.*;
 import me.demerzel.item.Item;
 import me.demerzel.item.impl.armor.BodyArmor;
 import me.demerzel.item.impl.misc.HealthPot;
@@ -16,11 +13,11 @@ import me.demerzel.util.GameManager;
 /**
  * Created by Demerzel on 1/29/16.
  */
-public abstract class Shopkeeper extends EntityMob implements EventInteract {
+public abstract class Shopkeeper extends EntityMob implements EventInteract, EventBattle {
     private String interact;
 
     public Shopkeeper(String name, Location location, String interact) {
-        super(name, "A man born to sell goods. When you buy his stuff, you give him purpose in life.", 5, 0, 1, location, 100000, 2000, 1, "The Shopkeeper punches you in the nose!", EntityBehavior.NEUTRAL);
+        super(name, "A man born to sell goods. When you buy his stuff, you give him purpose in life.", 15, 0, 20, location, 3000, 2000, 1, "The Shopkeeper punches you in the nose!", EntityBehavior.NEUTRAL);
         this.interact = interact;
     }
 
@@ -37,6 +34,8 @@ public abstract class Shopkeeper extends EntityMob implements EventInteract {
 
         }
     }
+
+
 
     @Override
     public void interact() {

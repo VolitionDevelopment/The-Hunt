@@ -31,4 +31,8 @@ public abstract class Command {
         this.description = description;
         return this;
     }
+
+    public String getName(){
+        return aliases[0];
+    }
 }

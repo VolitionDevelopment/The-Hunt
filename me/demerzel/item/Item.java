@@ -101,8 +101,4 @@ public abstract class Item {
     public void setType(ItemType type) {
         this.type = type;
     }
-
-    public void register(ItemManager itemManager){
-        itemManager.add(name.toLowerCase(), this);
-    }
 }

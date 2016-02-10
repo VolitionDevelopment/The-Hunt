@@ -6,10 +6,12 @@ import me.demerzel.item.impl.weapon.BasicBow;
 import me.demerzel.item.impl.weapon.Revolver;
 import me.demerzel.spell.impl.Fireball;
 import me.demerzel.spell.impl.Heal;
+import me.demerzel.util.DisplayManager;
 import me.demerzel.util.GameManager;
 import me.demerzel.util.Utilities;
 
 import javax.rmi.CORBA.Util;
+import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -17,6 +19,7 @@ import java.util.Scanner;
  */
 public class Start {
     public static void main(String[] args) {
+
         GameManager gameManager = GameManager.getInstance();
         gameManager.setup();
 
