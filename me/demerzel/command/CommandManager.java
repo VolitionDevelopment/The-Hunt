@@ -41,8 +41,7 @@ public class CommandManager {
     public ArrayList<String> getAliases(Class<? extends Command> get){
         return commandHashMap.entrySet()
             .stream()
-            .filter(command -> command.getValue()
-            .getClass().equals(get))
+            .filter(command -> command.getValue().getClass().equals(get))
             .map(HashMap.Entry::getKey)
             .collect(Collectors.toCollection(ArrayList::new));
     }
