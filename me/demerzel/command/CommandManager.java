@@ -39,7 +39,12 @@ public class CommandManager {
     }
 
     public ArrayList<String> getAliases(Class<? extends Command> get){
-        return commandHashMap.entrySet().stream().filter(command -> command.getValue().getClass().equals(get)).map(HashMap.Entry::getKey).collect(Collectors.toCollection(ArrayList::new));
+        return commandHashMap.entrySet()
+            .stream()
+            .filter(command -> command.getValue()
+            .getClass().equals(get))
+            .map(HashMap.Entry::getKey)
+            .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public Command aliasOf(String string){
@@ -55,7 +60,10 @@ public class CommandManager {
     public HashMap<String, Command> getCommandHashMap(){ return commandHashMap;}
 
     public ArrayList<Command> getCommands(){
-        return commandHashMap.entrySet().stream().map(HashMap.Entry::getValue).collect(Collectors.toCollection(ArrayList::new));
+        return commandHashMap.entrySet()
+            .stream()
+            .map(HashMap.Entry::getValue)
+            .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public void add(String in, Command command){
